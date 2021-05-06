@@ -1,2 +1,2 @@
 # rusty-os
-Rusty-OS is an operating system kernel for embedded devices written in Rust
+Rusty-OS is a simple kernel for embedded systems written in Rust
