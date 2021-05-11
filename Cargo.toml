@@ -3,7 +3,13 @@ name = "rusty-os"
 version = "0.1.0"
 authors = ["Rafael Boy <rafaboyr95@gmail.com>", "Roberto Valenzuela <valenzuelarober@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Rusty-OS is a simple kernel for embedded systems written in Rust"
+documentation = "https://github.com/roemvaar/rusty-os/tree/main/docs"
+readme = "README.md"
+repository = "https://github.com/roemvaar/rusty-os/tree/main/src"
+homepage = "https://github.com/roemvaar/rusty-os"
+license = "MIT"
+keywords = ["kernel"]
+categories = ["embedded"]
 
 [dependencies]
