@@ -5,6 +5,7 @@ Rusty-OS is a simple kernel for embedded systems written in Rust
 
 - Pre-emptive
 - Multitask
+- Interrupts
 
 ### Build
 
