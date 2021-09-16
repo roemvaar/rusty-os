@@ -48,6 +48,11 @@ We have made this open source so everyone can contribute and learn.
 
 Look at contribute.md
 
+### Future Development
+
+In the future, we'll port the scheduler to support other architectures,
+specially RISC-V.
+
 ### Notes
 
 This is a hobby project in order to learn the inner components of OS design and
