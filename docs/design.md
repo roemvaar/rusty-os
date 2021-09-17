@@ -1,4 +1,5 @@
 # rusty-os
+
 Rusty-OS is a simple kernel for embedded systems written in Rust
 
 What does an OS actually do?
@@ -32,3 +33,14 @@ green world; **security** (an extension of protection, really) against
 malicious applications is critical, especially in these highly-networked
 times; **mobility** is increasingly important as OSes are run on smaller and
 smaller devices.
+
+## Process API
+
+These APIs, are available on Rusty-OS:
+
+- Create
+- Destroy
+- Wait
+- Miscellaneous Control - such as suspending and resuming a process.
+- Status
+ 
