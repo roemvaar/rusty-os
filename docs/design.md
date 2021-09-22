@@ -1,6 +1,6 @@
 # rusty-os
 
-Rusty-OS is a simple kernel for embedded systems written in Rust
+rusty-os is a simple kernel for embedded systems written in Rust
 
 What does an OS actually do?
 
@@ -52,3 +52,16 @@ A process can be in one of three states:
 
 ![Process: State Transitions](img/process_states.png)
   
+## Data Structures
+
+rusty-os has some key data structures that tracks relevant pieces of information.
+
+- Proces List: To track the state of each process, the OS will keep a process
+list for all processes that are ready, as well as some additional information
+to track which process is currently running.
+
+- Register context: will hold, for a stopped process, the contents of its register state. When a process is
+stopped, its register state will be saved to this memory location; by restoring these registers (i.e., placing
+their values back into the actual physical registers), the OS can resume running the process. This technique is
+known as a context switch.
+ 
