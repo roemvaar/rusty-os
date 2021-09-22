@@ -43,4 +43,12 @@ These APIs, are available on Rusty-OS:
 - Wait
 - Miscellaneous Control - such as suspending and resuming a process.
 - Status
- 
+
+A process can be in one of three states:
+
+- Running
+- Ready
+- Blocked
+
+![Process: State Transitions](img/process_states.png)
+  
