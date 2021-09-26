@@ -13,3 +13,5 @@ keywords = ["kernel"]
 categories = ["embedded"]
 
 [dependencies]
+cortex-a = "6.1.0"
+riscv = "0.7.0"
