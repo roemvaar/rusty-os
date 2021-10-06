@@ -2,7 +2,9 @@
 
 Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.
 
-It currently supports two scheduling algorithms and one hardware devices.
+[Quick Start Page](./quick_start_guide.md)
+
+It currently supports two scheduling algorithms and one ISA (ARM64).
 
 The motivation to build this project is to learn/achieve the following:
 
