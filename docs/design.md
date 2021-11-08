@@ -64,4 +64,3 @@ to track which process is currently running.
 stopped, its register state will be saved to this memory location; by restoring these registers (i.e., placing
 their values back into the actual physical registers), the OS can resume running the process. This technique is
 known as a context switch.
- 
