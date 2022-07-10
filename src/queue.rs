@@ -1,6 +1,4 @@
-/* Rusty-OS - Queue
- * 
- */
+// Rusty-OS - Queue
  
  extern crate queues;
  
@@ -10,4 +8,3 @@
  
   let mut q: Queue<isize> = queue![];
 }
-  

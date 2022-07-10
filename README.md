@@ -60,3 +60,6 @@ specially RISC-V.
 This is a hobby project in order to learn the inner components of OS design and
 low-level development for ARM processors using Rust. Rusty-OS being a hobby project
 can't be compared to mainstream RTOSs like The Zephyr Project, FreeRTPS, QNX, etc.
+
+A lot of the design and development ideas where inspired by ECE 652 course from
+University of Waterloo.
