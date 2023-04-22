@@ -1,7 +1,7 @@
 [package]
 name = "rusty-os"
-version = "0.1.0"
-authors = ["Rafael Boy <rafaboyr95@gmail.com>", "Roberto Valenzuela <valenzuelarober@gmail.com>"]
+version = "1.0.0"
+authors = ["Roberto Valenzuela <valenzuelarober@gmail.com>"]
 edition = "2018"
 description = "Rusty-OS is a simple kernel for embedded systems written in Rust"
 documentation = "https://github.com/roemvaar/rusty-os/tree/main/docs"
@@ -9,9 +9,7 @@ readme = "README.md"
 repository = "https://github.com/roemvaar/rusty-os/tree/main/src"
 homepage = "https://github.com/roemvaar/rusty-os"
 license = "MIT"
-keywords = ["kernel"]
+keywords = ["kernel", "rtos"]
 categories = ["embedded"]
 
 [dependencies]
-cortex-a = "6.1.0"
-riscv = "0.7.0"

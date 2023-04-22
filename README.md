@@ -2,61 +2,37 @@
 
 Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.
 
-[Quick Start Page](./quick_start_guide.md)
+Supported systems:
 
-It currently supports two scheduling algorithms and one ISA (ARM64).
+| Arch |  Supported |
+|---|---|
+| ARM Cortex-M  | Yes |
 
-The motivation to build this project is to learn/achieve the following:
 
-- Understand the architecture of the ARM cortex M series of processors
-
-- Develop a build system from sratch using open source tools
-
-- Write low-level code to initialize the microcontroller: this includes linker scripts,
-interrupt vector tables, etc.
-
-- Understand the working of an operating system and implement a basic scheduler
-
-- Implement primitives like mutexes and spinlocks from scratch
-
-- Use CMSIS to make sure our code is reusable
-
-- Make the project portable by separating device-specific code from kernel code
-
-- Use CI pipeline in GitHub using Travis CI
-
-### Characteristics
+## Features
 
 - Pre-emptive
 - Multitask
 - Interrupts
+- Shared-memory
 
-### Build
+## Build
 
-### Examples
+``
+$ cargo build
+``
 
-### Supported Devices
+## Contribute
 
-It currently supports development boards from
+Contributions are accepted. Make sure to open a merge request.
 
-- STMicroelectronics
-- Texas Instruments
-- NXP Semiconductors
+## Future Development
 
-### Contribute
+Future development includes adding new features and support for other
+systems such as RISC-V.
 
-This project is in its initial stages and we are planning to add more features to it.
-We have made this open source so everyone can contribute and learn.
+## Notes
 
-Look at contribute.md
-
-### Future Development
-
-In the future, we'll port the scheduler to support other architectures,
-specially RISC-V.
-
-### Notes
-
-This is a hobby project in order to learn the inner components of OS design and
+This is a hobby project in order to learn the inner components of RTOS design and
 low-level development for ARM processors using Rust. Rusty-OS being a hobby project
-can't be compared to mainstream RTOSs like The Zephyr Project, FreeRTPS, QNX, etc.
+can't be compared to mainstream RTOSs like The Zephyr Project, FreeRTOS, QNX, etc.

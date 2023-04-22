@@ -1,4 +1,0 @@
-/* Rusty-OS - Timers
- * 
- */
- 
