@@ -4,14 +4,11 @@
  * written in Rust.
  */
 
-use std::{thread, time::Duration};
-
-
 fn main() {
     println!("Rusty OS!");
     println!("Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.");
     
-    let ticks = 0;
+    let mut ticks = 0;
     
     // Ifinite loop
     loop {
@@ -20,4 +17,3 @@ fn main() {
         ticks = ticks + 1;
     }
 }
- 

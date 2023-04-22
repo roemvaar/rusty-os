@@ -1,3 +1,0 @@
-/* Rusty-OS - RISC-V
- * 
- */
