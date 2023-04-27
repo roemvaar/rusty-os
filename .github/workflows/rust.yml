@@ -36,18 +36,8 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
-      - name: Install Rust Toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: nightly
-      - name: Install bootimage
-        run: cargo install bootimage --debug
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Install Rustup Components
-        run: rustup component add rust-src llvm-tools-preview
-      - name: Run `cargo bootimage`
-        uses: actions-rs/cargo@v1
-        with:
-          command: bootimage
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose
