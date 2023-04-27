@@ -6,7 +6,7 @@
 > Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.
 
 This OS is based on the series of posts by Phillip Oppermann, go check his
-[blog](https://os.phil-opp.com/) and [github]() for further explanation on how to build an OS.
+[blog](https://os.phil-opp.com/) and [github](https://github.com/phil-opp/blog_os) for further explanation on how to build an OS.
 
 ## [Documentation](https://docs.rs/crate/rusty-os)
 
@@ -40,7 +40,17 @@ Support for different platforms ("targets"):
 ## Build
 
 ``
+$ qemu-system-x86_64 -drive format=raw,file=target/x86_64/debug/bootimage-rusty-os.bin
+``
+
+``
 $ cargo build
+``
+
+## Run
+
+``
+$ cargo run
 ``
 
 ## Contribute

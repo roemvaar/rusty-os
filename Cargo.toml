@@ -13,3 +13,10 @@ keywords = ["kernel", "rtos"]
 categories = ["embedded"]
 
 [dependencies]
+bootloader = "0.9.23"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
