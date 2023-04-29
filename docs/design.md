@@ -1,6 +1,13 @@
-# rusty-os
+# `rusty-os`
 
-rusty-os is a simple kernel for embedded systems written in Rust
+> Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.
+
+## Features
+
+- Pre-emptive
+- Multitask
+- Interrupts
+- Shared-memory
 
 What does an OS actually do?
 
