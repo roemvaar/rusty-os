@@ -6,7 +6,7 @@
 > Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.
 
 This OS is based on the series of posts by Phillip Oppermann, go check his
-[blog](https://os.phil-opp.com/) and [github](https://github.com/phil-opp/blog_os) for further explanation on how to build an OS.
+[blog](https://os.phil-opp.com/) and [github](https://github.com/phil-opp/blog_os) for further explanation on how to build an OS usign Rust.
 
 ## [Documentation](https://docs.rs/crate/rusty-os)
 
@@ -26,44 +26,57 @@ Support for different platforms ("targets"):
 
 | target | notes |
 |---|---|
-| aarch64  | QEMU ARM Cortex-M |
 | x86_64 | QEMU x86 64 bits |
 
-
-## Features
-
-- Pre-emptive
-- Multitask
-- Interrupts
-- Shared-memory
+Future work includes adding support for different platforms. ARM support is
+in progress.
 
 ## Build
 
-``
-$ qemu-system-x86_64 -drive format=raw,file=target/x86_64/debug/bootimage-rusty-os.bin
-``
+This project requires a nightly version of Rust because it uses some unstable
+features. At least nightly _2020-07-15_ is required for building. You might
+need to run `rustup update nightly --force` to update to the latest nightly
+even if some components such as `rustfmt` are missing it.
 
-``
+You can build the project by running:
+
+```
 $ cargo build
-``
+```
+
+To create a bootable disk image from the compiled kernel, you need to install
+the [`bootimage`] tool:
+
+```
+$ cargo install bootimage
+```
+
+After installing, you can create the bootable disk image by running:
+
+```
+$ cargo bootimage
+```
+
+This creates a bootable disk image in the `target/x86_64/debug` directory.
 
 ## Run
 
-``
+```
 $ cargo run
-``
+```
+
+[QEMU] and the [`bootimage`] tool need to be installed for this.
 
 ## Contribute
 
 Contributions are accepted. Make sure to open a merge request.
 
-## Future Development
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
 
-Future development includes adding new features and support for other
-systems such as RISC-V.
 
 ## Notes
 
 This is a hobby project in order to learn the inner components of RTOS design and
 low-level development for ARM processors using Rust. Rusty-OS being a hobby project
-can't be compared to mainstream RTOSs like The Zephyr Project, FreeRTOS, QNX, etc.
+can't be compared to mainstream RTOSs like The Zephyr Project, FreeRTOS, QNX, etc. And again, special thanks to Phillip Oppermann for paving the way for the
+other embedded software enthusiasts with his work. "Standing on the shoulders of giants".
