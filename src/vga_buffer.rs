@@ -85,10 +85,10 @@ impl Writer {
                 if self.column_position >= BUFFER_WIDTH {
                     self.new_line();
                 }
-
+                
                 let row = BUFFER_HEIGHT - 1;
                 let col = self.column_position;
-
+                
                 let color_code = self.color_code;
                 self.buffer.chars[row][col].write(ScreenChar {
                     ascii_character: byte,
@@ -98,7 +98,7 @@ impl Writer {
             }
         }
     }
-
+    
     // Writes the given ASCII string to the buffer
     // Wraps lines at `BUFFER_WIDTH`. Supports the `\n` newline character. Doesn't support
     // strings with non-ASCII characters, since they can't be printed in VGA text mode
@@ -110,7 +110,7 @@ impl Writer {
             }
         }
     }
-
+    
     // Shifts all lines on line up and clears last row
     fn new_line(&mut self) {
         for row in 1..BUFFER_HEIGHT {
@@ -122,7 +122,7 @@ impl Writer {
         self.clear_row(BUFFER_HEIGHT - 1);
         self.column_position = 0;
     }
-
+    
     // Clears a row by overwriting it with blank characters
     fn clear_row(&mut self, row: usize) {
         let blank = ScreenChar {
@@ -160,4 +160,26 @@ macro_rules! println {
 pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
     WRITER.lock().write_fmt(args).unwrap();
+}
+
+#[test_case]
+fn test_println_simple() {
+    println!("test_println_simple output");
+}
+
+#[test_case]
+fn test_println_many() {
+    for _ in 0..200 {
+        println!("test_println_many output");
+    }
+}
+
+#[test_case]
+fn test_println_output() {
+    let s = "Some test string that fits on a single line";
+    println!("{}", s);
+    for (i, c) in s.chars().enumerate() {
+        let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][i].read();
+        assert_eq!(char::from(screen_char.ascii_character), c);
+    }
 }
