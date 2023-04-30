@@ -33,7 +33,7 @@ pub enum Color {
     LightRed = 12,
     Pink = 13,
     Yellow = 14,
-    White = 15
+    White = 15,
 }
 
 // A combination of a foreground and a background color
@@ -105,8 +105,8 @@ impl Writer {
     fn write_string(&mut self, s: &str) {
         for byte in s.bytes() {
             match byte {
-                0x20..=0x7e | b'\n' => self.write_byte(byte),    // printable ASCII or newline
-                _ => self.write_byte(0xfe), // not a printable ASCII character
+                0x20..=0x7e | b'\n' => self.write_byte(byte), // printable ASCII or newline
+                _ => self.write_byte(0xfe),                   // not a printable ASCII character
             }
         }
     }
