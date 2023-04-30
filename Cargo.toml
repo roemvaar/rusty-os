@@ -1,6 +1,6 @@
 [package]
 name = "rusty-os"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["Roberto Valenzuela <valenzuelarober@gmail.com>"]
 edition = "2018"
 description = "Rusty-OS is a simple kernel for embedded systems written in Rust"
@@ -8,9 +8,13 @@ documentation = "https://github.com/roemvaar/rusty-os/tree/main/docs"
 readme = "README.md"
 repository = "https://github.com/roemvaar/rusty-os/tree/main/src"
 homepage = "https://github.com/roemvaar/rusty-os"
-license = "MIT"
+license = "MIT/Apache-2.0"
 keywords = ["kernel", "rtos"]
 categories = ["embedded"]
+
+[[test]]
+name = "should_panic"
+harness = false
 
 [dependencies]
 bootloader = "0.9.23"
