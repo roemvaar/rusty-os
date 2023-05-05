@@ -18,16 +18,24 @@ pub extern "C" fn _start() -> ! {
     println!("Rusty OS!");
     println!("Rusty-OS is a simple RTOS for ARM-based embedded systems written in Rust.");
 
+    rusty_os::init();
+
+    x86_64::instructions::interrupts::int3();
+
     #[cfg(test)]
     test_main();
 
     let mut ticks = 0;
 
-    loop {
-        // Write your tasks here
-        println!("Awake time: {} ticks", ticks);
-        ticks = ticks + 1;
-    }
+    println!("It did not crash!");
+
+    loop {}
+
+    // loop {
+    //     // Write your tasks here
+    //     println!("Awake time: {} ticks", ticks);
+    //     ticks = ticks + 1;
+    // }
 }
 
 // This function is called on panic
